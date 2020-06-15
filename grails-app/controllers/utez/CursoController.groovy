@@ -68,14 +68,14 @@ class CursoController {
         Date fechaInicio = new SimpleDateFormat("yyyy-MM-dd").parse(params.fechaInicioCurso)
         Date fechaFin = new SimpleDateFormat("yyyy-MM-dd").parse(params.fechaFinCurso)
 
-        if (Curso.findByNombreAndFechaInicioAndFechaFinAndIdNotEqual(params.nombre, fechaInicio, fechaFin, params.id)) {
+        if (Curso.findByNombreAndFechaInicioAndFechaFinAndIdNotEqual(params.nombre, fechaInicio, fechaFin, params.idCurso)) {
             flash.mensaje = "Información ya registrada"
             redirect controller: 'curso', action: 'editar', params: [idCurso: params.idCurso]
             return
         }
 
-        Curso curso = Curso.get(params.id)
-        curso.nombre = params.nombre
+        Curso curso = Curso.get(params.idCurso)
+        curso.nombre = params.nombre.toString()
         curso.fechaInicio = fechaInicio
         curso.fechaFin = fechaFin
 

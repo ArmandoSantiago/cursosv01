@@ -14,17 +14,23 @@ class PersonaController {
 
     def insertar() {
 
+        println "params $params"
         Persona persona = new Persona()
+        println "persona $persona"
         persona.nombre = params.nombre.toString()
+        println "persona.nombre $persona.nombre"
         persona.apellidoPaterno = params.apellidoPaterno.toString()
+        println "persona.apellidoPaterno $persona.apellidoPaterno"
         persona.apellidoMaterno = params.apellidoMaterno.toString()
+        println "persona.apellidoMaterno $persona.apellidoMaterno"
         persona.edad = params.edad.toInteger()
+        println "persona.edad $persona.edad"
 
         persona.validate()
 
 
         if (persona.hasErrors()) {
-            flash.mensaje = "Ocurrió un error en el registro"
+            flash.mensaje = "Ocurrió un error en el registro ${persona.errors.each { it}}"
             redirect controller: 'persona', action: 'registrar'
             return
         }

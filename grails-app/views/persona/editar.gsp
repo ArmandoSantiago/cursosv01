@@ -38,7 +38,7 @@
                 <input type="text" name="apellidoMaterno" value="${persona.apellidoMaterno}" required autocomplete="off" style="margin-bottom: 5%;"/>
                 <br>
                 <label>Edad</label>
-                <input type="number" step="1" name="edad" value="${persona.edad}" required autocomplete="off" style="margin-bottom: 5%;"/>
+                <input type="number" step="1" min="12" max="60" name="edad" value="${persona.edad}" required autocomplete="off" style="margin-bottom: 5%;"/>
 
                 <input type="submit" value="Editar"/>
 

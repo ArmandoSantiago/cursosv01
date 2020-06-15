@@ -26,6 +26,7 @@ class Persona {
         edad range : 12..60
         habilidades nullable: true
         participaciones nullable: true
+        informacion nullable: true
     }
 
     String toString(){

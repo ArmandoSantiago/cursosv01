@@ -37,7 +37,7 @@
                 <input type="text" name="apellidoMaterno" required autocomplete="off" style="margin-bottom: 5%;"/>
                 <br>
                 <label>Edad</label>
-                <input type="number" name="edad" required autocomplete="off" style="margin-bottom: 5%;"/>
+                <input type="number" step="1" min="12" max="60" name="edad" required autocomplete="off" style="margin-bottom: 5%;"/>
                 <br>
                 <h3>Datos de información de contacto</h3>
                 <label>Teléfono</label>
